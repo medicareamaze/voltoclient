@@ -6,7 +6,7 @@ import {
   widgets as defaultWidgets,
   tiles as defaultTiles,
 } from '@plone/volto/config';
-import { FullView } from './components';
+import { FullView,FaqView } from './components';
 export const settings = {
   ...defaultSettings,
 };
@@ -16,6 +16,7 @@ export const views = {
   layoutViews: {
     ...defaultViews.layoutViews,
     full_view: FullView,
+    faq_view: FaqView,
   },
 };
 

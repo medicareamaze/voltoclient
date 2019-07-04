@@ -9,5 +9,8 @@
  * };
  */
 import FullView from './FullView/FullView';
+import FaqView from './FaqView/FaqView';
 
-export { FullView };
+export { FullView,FaqView };
+
+
