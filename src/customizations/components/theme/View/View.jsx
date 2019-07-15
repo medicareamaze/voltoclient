@@ -312,11 +312,11 @@ export default class View extends Component {
           )}
         {/* Add opt-in social sharing if required, disabled by default */}
         {/* In the future this might be parameterized from the app config */}
-        <SocialSharing
+        {/* <SocialSharing
           url={typeof window === 'undefined' ? '' : window.location.href}
           title={this.props.content.title}
           description={this.props.content.description || ''}
-        />
+        /> */}
         {this.props.content.allow_discussion && (
           <Comments pathname={this.props.pathname} />
         )}

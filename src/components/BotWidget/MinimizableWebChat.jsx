@@ -6,6 +6,8 @@ import './fabric-icons-inline.css';
 import './MinimizableWebChat.css';
 import { Choice } from 'adaptivecards';
 import * as sipjs from 'sip.js';
+import Tooltip from '@material-ui/core/Tooltip';
+
 
 export default class  extends React.Component {
   userAgent = new sipjs.UA({
@@ -20,7 +22,8 @@ export default class  extends React.Component {
   acceptSession;
   constructor(props) {
     super(props);
-   this.handleAgentButtonClick = this.handleAgentButtonClick.bind(this);
+    this.handleRestartButtonClick = this.handleRestartButtonClick.bind(this);
+    this.handleAgentButtonClick = this.handleAgentButtonClick.bind(this);
     this.handleFetchToken = this.handleFetchToken.bind(this);
     this.handleMaximizeButtonClick = this.handleMaximizeButtonClick.bind(this);
     this.handleMinimizeButtonClick = this.handleMinimizeButtonClick.bind(this);
@@ -118,11 +121,19 @@ export default class  extends React.Component {
        this.setState(() => ({ token }));
     }
   }
+
+  handleRestartButtonClick() {
+    this.state.store.dispatch({
+      type: 'WEB_CHAT/SEND_MESSAGE',
+      payload: { text: 'restart'  }
+    });
+  }
   handleAgentButtonClick() {
     this.state.store.dispatch({
       type: 'WEB_CHAT/SEND_MESSAGE',
       payload: { text: 'help'  }
     });
+    
 
     this.session = this.userAgent.invite('1002@freeswitch.isals.com',
         {
@@ -269,16 +280,27 @@ export default class  extends React.Component {
               className={ side === 'left' ? 'chat-box left' : 'chat-box right' }
             >
               <header>
+              
                 <div className="filler" />
+                <Tooltip title="Talk To Agent" placement="left">
                 <button
                   className="friend"
                   onClick={ this.handleAgentButtonClick }
                 > 
                  <span className="ms-Icon ms-Icon--AddFriend" />
                  </button>
+                 </Tooltip>
+                 <button
+                  className="refresh"
+                  onClick={ this.handleRestartButtonClick }
+                
+                >
+                  <span className="ms-Icon ms-Icon--Refresh" />
+                </button>
                 <button
                   className="switch"
                   onClick={ this.handleSwitchButtonClick }
+                
                 >
                   <span className="ms-Icon ms-Icon--Switch" />
                 </button>

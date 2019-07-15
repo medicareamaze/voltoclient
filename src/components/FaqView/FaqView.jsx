@@ -12,7 +12,8 @@ import { FormattedMessage } from 'react-intl';
 import { Container,List,Icon } from 'semantic-ui-react';
 import Collapsible from 'react-collapsible';
 import { getFaq } from '../../actions';
-import './sass/main.css';
+import './FaqView.css';
+
 
 /**
  * FaqView class.
@@ -52,14 +53,14 @@ class FaqView extends Component {
   static defaultProps = {
     items: [],
   };
-
+ 
   /**
    * Component will mount
    * @method componentWillMount
    * @returns {undefined}
    */
   componentWillMount() {
-    this.props.getFaq();
+    this.props.getFaq();   
   }
 
   /**
@@ -68,15 +69,22 @@ class FaqView extends Component {
    * @returns {string} Markup for the component.
    */
   render() {
+    
     return (
+     
       <Container id="page-faq">
+     
         <Helmet title="FAQ" />
+        
         <div className="container">
+        
           <article id="content">
             <header>
-              <h1 className="documentFirstHeading">FAQ</h1>
+              <h1 className="documentFirstHeading">FAQ Knowledgebase</h1>
+              <h3>Browse our knowledgebase </h3>
+          
             </header>
-            <section id="content-core">     
+            <section id="content-core">               
             <List divided relaxed> 
             {Object.keys(this.props.items).map(key=>{
                 return (
@@ -126,10 +134,14 @@ class FaqView extends Component {
             }  
                 
              </List>
-            </section>
+            
+           </section>
           </article>
         </div>
+     
+     
       </Container>
+     
     );
   }
 }

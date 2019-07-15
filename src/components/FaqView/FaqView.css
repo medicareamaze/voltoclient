@@ -118,14 +118,14 @@ strong {
 
 .Collapsible__trigger {
   display: block;
-  font-weight: 400;
+  font-weight: 600;
   text-decoration: none;
   color: #333333;
   position: relative;
   border: 1px solid white;
   padding: 10px;
-  background: #39C;
-  color: white; }
+  background: whitesmoke;
+  color: black; }
   .Collapsible__trigger:after {
     font-family: 'FontAwesome';
     content: '\f107';
@@ -141,14 +141,14 @@ strong {
     background-color: grey; }
 
 .CustomTriggerCSS {
-  
-  background-color:rgb(237,241,242);
+  font-weight: 500;
+  background-color:whitesmoke;
   color: black;
   transition: background-color 200ms ease; }
 
 .CustomTriggerCSS--open {
-  
-  background-color:rgb(237,241,242);
+  font-weight: 500;
+  background-color:whitesmoke;
   color: black;
 }
 

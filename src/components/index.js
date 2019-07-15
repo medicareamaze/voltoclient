@@ -10,7 +10,8 @@
  */
 import FullView from './FullView/FullView';
 import FaqView from './FaqView/FaqView';
+import BotView from './BotView/BotView';
 
-export { FullView,FaqView };
+export { FullView,FaqView,BotView };
 
 

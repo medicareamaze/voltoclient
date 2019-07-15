@@ -57,6 +57,7 @@
     "node": "^8 || ^10"
   },
   "dependencies": {
+    "@material-ui/core": "4.2.0",
     "@plone/volto": "3.0.4",
     "botframework-webchat": "4.4.2",
     "react-collapsible": "2.6.0",
