@@ -9,10 +9,11 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
-import { Container,List,Icon } from 'semantic-ui-react';
+import { Container,List,Icon} from 'semantic-ui-react';
 import Collapsible from 'react-collapsible';
 import { getFaq } from '../../actions';
 import './FaqView.css';
+import { Link } from 'react-router-dom';
 
 
 /**
@@ -101,21 +102,12 @@ class FaqView extends Component {
                                 {item.description && (
                                     <div className="tileBody">
                                     <span className="description">{item.description}</span>
-                                    {item.text && item.text.data && item.text.data.replace(/<[^>]+>/g, '')!==''? (
-                                    <Collapsible trigger="Read More"
-                                     triggerClassName="CustomTriggerCSS"
-                                     triggerOpenedClassName="CustomTriggerCSS--open"
-                                    >
-                                  
-
-                                           {item.text &&
-                                            item.text.data && (
-                                              <p dangerouslySetInnerHTML={{ __html: item.text.data }} />
-                                            )}
-
-
-
-                                    </Collapsible>
+                                    {item.blog_link && item.blog_link !=='' ? (
+                                       <p>
+                                       <Link to={item.blog_link} >
+                                         <FormattedMessage id="Read More…" defaultMessage="Read More…" />
+                                       </Link>
+                                     </p>
                                     ):
                                     null}
                                     </div>

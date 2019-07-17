@@ -28,7 +28,7 @@ export default class  extends React.Component {
     this.handleMaximizeButtonClick = this.handleMaximizeButtonClick.bind(this);
     this.handleMinimizeButtonClick = this.handleMinimizeButtonClick.bind(this);
     this.handleSwitchButtonClick = this.handleSwitchButtonClick.bind(this);
-
+  
     // const store = createStore({}, ({ dispatch }) => next => action => {
     //   if (action.type === 'DIRECT_LINE/CONNECT_FULFILLED') {
     //     setTimeout(() => {
@@ -205,7 +205,7 @@ export default class  extends React.Component {
   //     this.setState({ showChat: true });
   //     }
   //   )
-
+  
   let user = {    
     id:   Math.floor((Math.random() * 10000000) + 1).toString(),
     name: 'Visitor'
