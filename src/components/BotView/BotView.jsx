@@ -57,7 +57,7 @@ class BotView extends Component {
         backgroundColor: 'Transparent'
       })
     });
-  
+    
     this.setState({ showChat: true });
   }
 
@@ -91,7 +91,7 @@ class BotView extends Component {
                         showChat ?
                         <Container id="chat">
                         <WebChat             
-                          className="react-web-chat"export class  WebChat
+                          className="react-web-chat"
                         />
                         </Container>
                         : 
